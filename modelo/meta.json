@@ -1,0 +1,107 @@
+{
+  "modelo": "TF-IDF (palabras + caracteres) + Regresión logística",
+  "preprocesamiento": "limpieza, tokenización, stopwords (NLTK, conservando negaciones), stemming Snowball",
+  "C": 2,
+  "etiquetas": [
+    "Alegría",
+    "Asco",
+    "Enojo",
+    "Miedo",
+    "Neutral",
+    "Sorpresa",
+    "Tristeza"
+  ],
+  "textos_entrenamiento": 9492,
+  "prueba": {
+    "accuracy": 0.6811,
+    "precision_macro": 0.6634,
+    "recall_macro": 0.6589,
+    "f1_macro": 0.6599,
+    "auc_macro": 0.9202,
+    "accuracy_sentimiento": 0.7594,
+    "textos": 2722
+  },
+  "comparacion": [
+    {
+      "Modelo": "Regresión logística",
+      "Representación": "TF-IDF",
+      "Accuracy": 0.6782,
+      "Precisión": 0.6676,
+      "Recall": 0.6352,
+      "F1 macro": 0.6481,
+      "AUC macro": 0.9088,
+      "Entrenamiento (s)": 1.1746
+    },
+    {
+      "Modelo": "Regresión logística",
+      "Representación": "Bag of Words",
+      "Accuracy": 0.6635,
+      "Precisión": 0.6488,
+      "Recall": 0.628,
+      "F1 macro": 0.6364,
+      "AUC macro": 0.8971,
+      "Entrenamiento (s)": 1.0181
+    },
+    {
+      "Modelo": "Random Forest",
+      "Representación": "TF-IDF",
+      "Accuracy": 0.6488,
+      "Precisión": 0.6194,
+      "Recall": 0.63,
+      "F1 macro": 0.6143,
+      "AUC macro": 0.8932,
+      "Entrenamiento (s)": 5.2871
+    },
+    {
+      "Modelo": "Random Forest",
+      "Representación": "Bag of Words",
+      "Accuracy": 0.6418,
+      "Precisión": 0.6178,
+      "Recall": 0.624,
+      "F1 macro": 0.6058,
+      "AUC macro": 0.8947,
+      "Entrenamiento (s)": 4.1671
+    },
+    {
+      "Modelo": "Naive Bayes",
+      "Representación": "TF-IDF",
+      "Accuracy": 0.6139,
+      "Precisión": 0.6338,
+      "Recall": 0.5475,
+      "F1 macro": 0.5771,
+      "AUC macro": 0.8772,
+      "Entrenamiento (s)": 0.0178
+    },
+    {
+      "Modelo": "Naive Bayes",
+      "Representación": "Bag of Words",
+      "Accuracy": 0.6102,
+      "Precisión": 0.5851,
+      "Recall": 0.5752,
+      "F1 macro": 0.577,
+      "AUC macro": 0.8646,
+      "Entrenamiento (s)": 0.0176
+    },
+    {
+      "Modelo": "Árbol de decisión",
+      "Representación": "Bag of Words",
+      "Accuracy": 0.5768,
+      "Precisión": 0.5557,
+      "Recall": 0.5384,
+      "F1 macro": 0.5447,
+      "AUC macro": 0.7426,
+      "Entrenamiento (s)": 1.387
+    },
+    {
+      "Modelo": "Árbol de decisión",
+      "Representación": "TF-IDF",
+      "Accuracy": 0.5636,
+      "Precisión": 0.5313,
+      "Recall": 0.5164,
+      "F1 macro": 0.522,
+      "AUC macro": 0.7263,
+      "Entrenamiento (s)": 1.3152
+    }
+  ],
+  "fecha": "2026-11-13T17:16:41"
+}
