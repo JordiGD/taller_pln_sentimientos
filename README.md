@@ -44,6 +44,7 @@ Requiere Python **3.10 a 3.13**. No uses Python 3.14 o superior: `wordcloud` y `
 
 ```powershell
 # Windows (PowerShell)
+winget install Python.Python.3.13
 py -3.13 -m venv venv
 venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
