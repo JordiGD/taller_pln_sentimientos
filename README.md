@@ -11,6 +11,8 @@ El sistema lee una frase, un párrafo o un documento en español y lo clasifica 
 | `taller_pln_sentimientos.ipynb` | **Producto principal del taller.** Notebook con el flujo completo: carga del dataset → limpieza → tokenización → stopwords y stemming → Bag of Words y TF-IDF → Naive Bayes, Regresión logística, Árbol de decisión y Random Forest → precisión, recall, F1, matriz de confusión, ROC/AUC → WordCloud → conclusiones. Ya viene ejecutado con todos los resultados. |
 | `app.py` | Aplicación web: escribir un texto o subir un archivo y ver la emoción, el sentimiento y las palabras que influyeron. |
 | `predecir.py` | Lo mismo desde la consola. |
+| `config.py` | Configuración compartida (rutas y parámetros). |
+| `requirements.txt` | Dependencias de Python. |
 | `src/preprocesamiento.py` | Limpieza, tokenización, stopwords y stemming (el mismo código del notebook). |
 | `src/modelo.py` | Carga el modelo entrenado y analiza textos. |
 | `modelo/` | Modelo final guardado por el notebook. |
@@ -38,12 +40,25 @@ El sistema lee una frase, un párrafo o un documento en español y lo clasifica 
 2. *Entorno de ejecución → Ejecutar todas*. Tarda unos 6 minutos; el notebook instala las librerías y descarga los datos solo.
 
 ### Opción 2: en tu computador
-Requiere Python 3.10 o superior.
-```bash
-python -m venv venv
-venv\Scripts\activate            # Windows   (Linux/Mac: source venv/bin/activate)
-pip install -r requirements.txt
+Requiere Python **3.10 a 3.13**. No uses Python 3.14 o superior: `wordcloud` y `pyyaml` aún no tienen paquetes precompilados para esas versiones y pip intenta compilarlos, lo que falla en Windows con *"Microsoft Visual C++ 14.0 or greater is required"*.
 
+```powershell
+# Windows (PowerShell)
+py -3.13 -m venv venv
+venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+```bash
+# Linux / Mac
+python3.13 -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Luego, con el entorno activado:
+```bash
 jupyter notebook taller_pln_sentimientos.ipynb    # el notebook
 streamlit run app.py                               # la aplicación web
 python predecir.py --texto "Me da miedo la tormenta" --explicar
